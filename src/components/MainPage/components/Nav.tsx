@@ -128,7 +128,7 @@ export default function Nav() {
         />
 
         <div className="shrink-0 justify-end gap-1 flex-items-center max-xs:ml-auto">
-          <User className="max-xs:hidden" />
+          {/* <User className="max-xs:hidden" /> */}
           <ThemeToggle />
           <ReButton
             {...NavIconOnlyButtonProps}

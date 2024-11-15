@@ -1,7 +1,7 @@
 // ! 这里的数据在客户端、服务端都可调用，不要在这里存储敏感数据
 
 /** 网站名称 */
-export const WEBSITE_NAME = 'BMM'
+export const WEBSITE_NAME = '盒子导航'
 
 export const IS_DEV = process.env.NODE_ENV === 'development'
 
