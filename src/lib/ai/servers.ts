@@ -9,7 +9,7 @@ import { commonFetch } from './utils'
  *
  * 可参考下面 coze() 和 openai() 的示例，自行接入其他 AI 服务
  */
-export const getServer = coze
+export const getServer = Groq
 
 /**
  * 扣子 AI
@@ -58,3 +58,27 @@ function openai(): ServerConfig {
 }
 
 // 可添加更多 AI 服务商...
+
+function Groq(): ServerConfig {
+  if (!env.GROQ_API_KEY) {
+    throw new Error('请配置环境变量 GROQ_API_KEY')
+  }
+  return {
+    responseContentPath: 'choices[0].message.content',
+    sendRequest(content) {
+      return commonFetch({
+        url: 'https://api.groq.com/openai/v1/chat/completions',
+        token: env.GROQ_API_KEY!,
+        body: {
+          model: 'llama-3.2-90b-text-preview',
+          messages: [{ role: 'user', content }],
+          temperature: 0.7,
+          max_tokens: 1024,
+          top_p: 1,
+          stream: false,
+          stop: null
+        },
+      })
+    },
+  }
+}
