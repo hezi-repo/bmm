@@ -15,6 +15,7 @@ import BookmarkContainer from './components/BookmarkContainer'
 import Nav from './components/Nav'
 import TagPicker, { TAG_PICKER_SCROLL_TOP_KEY, getScrollElement } from './components/TagPicker'
 import { MainPageContext, MainPageProvider } from './ctx'
+import Footer from '@/hezi/footer'
 
 // RSC 传进来的数据
 interface Props {
@@ -111,6 +112,7 @@ export default function MainPage(props: Props) {
               </div>
             )}
           </BookmarkContainer>
+          <Footer />
         </div>
       </div>
     </MainPageProvider>

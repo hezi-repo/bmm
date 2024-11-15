@@ -44,8 +44,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         <Toaster />
         <Providers session={session} tags={tags} totalBookmarks={totalBookmarks}>
           <AntdRegistry>
-            {/* 整个应用容器为 垂直的 flex 布局，子元素设置 'flex-1' 即可撑满页面高度 */}
-            <div className="flex min-h-screen flex-col">{children}</div>
+            <div className="flex min-h-screen flex-col">
+              {children}
+            </div>
           </AntdRegistry>
         </Providers>
       </body>
