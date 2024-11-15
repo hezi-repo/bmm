@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     ...allTags.map((tag) => ({
-      url: `${baseUrl}/tag/${tag.id}`,
+      url: `${baseUrl}/tag/${tag.name}`,
       lastModified: tag.updatedAt as Date,
       priority: 0.8,
     })),
