@@ -17,7 +17,7 @@ export default auth((req) => {
   let checkAdmin = true
   const whitelist = {
     prefixes: ['/_next', '__next', '/api/auth', '/tag'],
-    affixes: ['.svg', '.png'],
+    affixes: ['.svg', '.png', 'robots.txt', 'sitemap.xml'],
     pathnames: ['/', '/recent', '/search', '/login', '/forbidden', '/404', '/500', '/_error'],
   }
   if (
